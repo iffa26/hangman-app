@@ -1,26 +1,21 @@
 import React from 'react'
 
 class Letterbutton extends React.Component {
-    constructor(props) {
-      super(props)
-      this.state = {disabled: false}
 
-      this.onLetterClick= this.onLetterClick.bind(this)
-      this.disableLetter = this.disableLetter.bind(this)
-
-    }
-
-    onLetterClick() {
-        this.disableLetter()
-    }
-
-    disableLetter() {
+    state = {disabled: false}
+    
+    disableLetter = () => {
         this.setState(state => ({
             disabled: true
         }))
-        console.log("state updated")
+        console.log("disableLetter")
     }
-  
+    
+    onLetterClick = () => {
+        this.disableLetter()
+        this.props.guessALetter(this.props.letter)
+    }
+
     render() {
       return (
         <button onClick = {this.onLetterClick} disabled = {this.state.disabled}> 
