@@ -8,7 +8,6 @@ class Letterbutton extends React.Component {
         this.setState(state => ({
             disabled: true
         }))
-        console.log("disableLetter")
     }
     
     onLetterClick = () => {
@@ -18,7 +17,9 @@ class Letterbutton extends React.Component {
 
     render() {
       return (
-        <button onClick = {this.onLetterClick} disabled = {this.state.disabled}> 
+        <button className = "letterButton-button" 
+                onClick = {this.onLetterClick} 
+                disabled = {this.state.disabled}> 
         {this.props.letter} 
         </button>
       )
