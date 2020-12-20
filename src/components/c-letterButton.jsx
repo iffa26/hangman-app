@@ -5,12 +5,12 @@ class Letterbutton extends React.Component {
       super(props)
       this.state = {disabled: false}
 
-      this.onClick= this.onClick.bind(this)
+      this.onLetterClick= this.onLetterClick.bind(this)
       this.disableLetter = this.disableLetter.bind(this)
 
     }
 
-    onClick() {
+    onLetterClick() {
         this.disableLetter()
     }
 
@@ -23,7 +23,7 @@ class Letterbutton extends React.Component {
   
     render() {
       return (
-        <button onClick = {this.onClick} disabled = {this.state.disabled}> 
+        <button onClick = {this.onLetterClick} disabled = {this.state.disabled}> 
         {this.props.letter} 
         </button>
       )
