@@ -2,7 +2,9 @@ import React from 'react'
 import Letters from './c-letters'
 import Man from './c-man'
 import HintCard from './c-hintCard'
-import HANGMANPICS from '../hangman-pics'
+import {HANGMANPICS, emojiFaces} from '../hangman-pics'
+import GameOverMessage from './c-gameOverMessage'
+//import Emoji from './c-emoji'
 
 class Word extends React.Component {
     state = {
@@ -27,7 +29,8 @@ class Word extends React.Component {
             word: "",
             wordArray: wordArray,
             displayedWordArray: displayedWordArray,
-            man: HANGMANPICS[0]
+            man: HANGMANPICS[0],
+            emoji: emojiFaces[0]
         }))
     }
 
@@ -65,7 +68,8 @@ class Word extends React.Component {
 
     updateMan = () => {
         this.setState((prevState) => {
-            return {man: HANGMANPICS[prevState.wrongLetters.length ]}
+            return {man: HANGMANPICS[prevState.wrongLetters.length ], 
+                    emoji: emojiFaces[prevState.wrongLetters.length ]}
         })
 
     }
@@ -84,14 +88,12 @@ class Word extends React.Component {
         return (
         <div>
             <h2> {this.state.displayedWordArray} </h2>
-            <Letters guessALetter={this.guessALetter}/>
+            <Letters guessALetter={this.guessALetter}
+                     gameOver={this.state.gameOver}/>
             <Man man={this.state.man} />
-            {this.state.gameOver && 
-                <h2>
-                Game over :(
-                </h2>
-            }
-            <HintCard/>
+            <div className = "emoji">{this.state.emoji}</div>
+            {this.state.gameOver && <GameOverMessage />}
+            {!this.state.gameOver && <HintCard/>}
         </div>)
       }
     }

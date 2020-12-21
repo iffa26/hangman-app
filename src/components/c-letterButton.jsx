@@ -16,12 +16,20 @@ class Letterbutton extends React.Component {
     }
 
     render() {
+      console.log("button: ", this.props.gameOver)
       return (
+      <span>
+        {this.props.gameOver ? 
+        <button className = "letterButton-button" 
+                disabled = {true}> 
+        {this.props.letter} 
+        </button>  :
         <button className = "letterButton-button" 
                 onClick = {this.onLetterClick} 
                 disabled = {this.state.disabled}> 
         {this.props.letter} 
-        </button>
+        </button> } 
+      </span>
       )
     }
   }

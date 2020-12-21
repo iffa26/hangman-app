@@ -49,4 +49,11 @@ const HANGMANPICS = [
       |
 =========`]
 
-export default HANGMANPICS;
+const emojiFaces = ["😃","😐","🤨","😒","😟","😫","😵"]
+
+//export default HANGMANPICS;
+
+export {
+  emojiFaces,
+  HANGMANPICS
+}
