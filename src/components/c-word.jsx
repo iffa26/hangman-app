@@ -9,7 +9,8 @@ class Word extends React.Component {
         wordArray: [], 
         displayedWordArray: [],
         wrongLetters : [],
-        man : ""
+        man : "",
+        gameOver: false
     }
 
     componentDidMount() {
@@ -38,8 +39,11 @@ class Word extends React.Component {
             this.updateDisplayedWord(guess)
         } else {
             this.updatewrongLetters(guess)
+            this.isGameOver()
             this.updateMan()
         }
+
+
     }
 
     updatewrongLetters = (guess) => {
@@ -60,17 +64,32 @@ class Word extends React.Component {
 
     updateMan = () => {
         this.setState((prevState) => {
-            return {man: HANGMANPICS[prevState.wrongLetters.length +1]}
+            return {man: HANGMANPICS[prevState.wrongLetters.length ]}
         })
 
     }
 
+    isGameOver = () => {
+        this.setState((prevState) => {
+            if (prevState.wrongLetters.length === 6) {
+                return {gameOver: true}
+            }
+        })
+    }
+
     render() {
+        console.log("isGameOver: ", this.state.gameOver, this.state.wrongLetters)
+
         return (
         <div>
             <h2> {this.state.displayedWordArray} </h2>
             <Letters guessALetter={this.guessALetter}/>
             <Man man={this.state.man} />
+            {this.state.gameOver && 
+                <h2>
+                Game over :(
+                </h2>
+            }
         </div>)
       }
     }
