@@ -1,6 +1,7 @@
 import React from 'react'
 import Letters from './c-letters'
 import Man from './c-man'
+import HintCard from './c-hintCard'
 import HANGMANPICS from '../hangman-pics'
 
 class Word extends React.Component {
@@ -90,6 +91,7 @@ class Word extends React.Component {
                 Game over :(
                 </h2>
             }
+            <HintCard/>
         </div>)
       }
     }
