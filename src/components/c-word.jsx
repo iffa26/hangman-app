@@ -13,7 +13,12 @@ class Word extends React.Component {
         displayedWordArray: [],
         wrongLetters : [],
         man : "",
-        gameOver: false
+        gameOver: false,
+    }
+    
+    onClickTryAgain = ()=>{
+        window.location.reload();
+
     }
 
     componentDidMount() {
@@ -82,6 +87,14 @@ class Word extends React.Component {
         })
     }
 
+    onClickShowSolution = () => {
+        this.setState((prevState) => {
+            return {displayedWordArray: prevState.wordArray}
+        })
+    }
+
+    
+
     render() {
         console.log("isGameOver: ", this.state.gameOver, this.state.wrongLetters)
 
@@ -92,8 +105,9 @@ class Word extends React.Component {
                      gameOver={this.state.gameOver}/>
             <Man man={this.state.man} />
             <div className = "emoji">{this.state.emoji}</div>
-            {this.state.gameOver && <GameOverMessage />}
-            {!this.state.gameOver && <HintCard/>}
+            {this.state.gameOver && <GameOverMessage onClickShowSolution={this.onClickShowSolution}
+                                                     onClickTryAgain = {this.onClickTryAgain}/>}
+            {!this.state.gameOver && <HintCard gameOver = {this.state.gameOver}/>}
         </div>)
       }
     }
