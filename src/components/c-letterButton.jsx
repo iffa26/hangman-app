@@ -16,10 +16,9 @@ class Letterbutton extends React.Component {
     }
 
     render() {
-      console.log("button: ", this.props.gameOver)
       return (
       <span>
-        {this.props.gameOver ? 
+        {this.props.gameFinished ? 
         <button className = "letterButton-button" 
                 disabled = {true}> 
         {this.props.letter} 

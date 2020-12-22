@@ -5,9 +5,7 @@ class HintCard extends React.Component {
     state = {showHintButton: true}
 
     getHint = () => {
-        this.setState(state => ({
-            showHintButton: false
-        }))
+        this.setState({showHintButton: false})
     }
     
     render() {

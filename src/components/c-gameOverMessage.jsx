@@ -16,12 +16,18 @@ class GameOverMessage extends React.Component {
     render() {
         return (
         <div>
+            {this.props.gameOver && <span>
             <h2>
-                Game over :(
+                Game over!
             </h2>
             <button onClick={this.hanldeClickShowSolution} disabled = {this.state.showSolutionDisabled}>View solution</button>
             <button onClick={this.hanldeClickTryAgain}>Try again</button>
-            <button>New word</button>
+            <button>New word</button> </span> }
+            {this.props.gameWon && <span>
+            <h2>
+                You win!
+            </h2>
+            <button>New word</button> </span> }
         </div>
     )}
 
