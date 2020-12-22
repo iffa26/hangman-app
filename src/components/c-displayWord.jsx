@@ -6,11 +6,11 @@ class DisplayWord extends React.Component {
         return(
             string.map((letter, index) => {
                 if(letter === " ") { 
-                    return (<span key = {index}>&nbsp;&nbsp;</span>)
+                    return (<span key = {index}>&nbsp;</span>)
                 } else if (letter === "_") {
-                    return (<span key = {index}>{letter}&nbsp;</span>)
+                    return (<span key = {index}>{letter}{" "}</span>)
                 } else {
-                    return (<span key = {index}>{letter}</span>)
+                    return (<span key = {index}>{letter}{" "}</span>)
                 }
             })
             )
@@ -18,7 +18,7 @@ class DisplayWord extends React.Component {
 
     render() {
         return (
-    <h2>
+    <h2 className = "displayWord">
         {this.formatWord(this.props.displayedWordArray)}
     </h2>
     )}

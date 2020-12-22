@@ -4,6 +4,8 @@ import HintCard from './c-hintCard'
 import {emojiFaces} from '../hangman-pics'
 import GameOverMessage from './c-gameOverMessage'
 import DisplayWord from './c-displayWord'
+import DisplayProgressBar from './c-progressBar.jsx'
+
 //import Emoji from './c-emoji'
 
 class Word extends React.Component {
@@ -28,7 +30,7 @@ class Word extends React.Component {
     }
 
     getNewWord = () => {
-        let newWord = "YA BIG"
+        let newWord = "YA BIG DUMMY"
         let wordArray = newWord.split("")
         let displayedWordArray = wordArray.map(letter => {
             if (letter === " ") {
@@ -128,6 +130,7 @@ class Word extends React.Component {
             <Letters guessALetter={this.guessALetter}
                      gameFinished={this.state.gameFinished} />
             <div className = "emoji">{this.state.emoji}</div>
+            <DisplayProgressBar wrongLetters={this.state.wrongLetters}/>
             <GameOverMessage gameOver = {this.state.gameOver}
                              gameWon = {this.state.gameWon}
                              onClickShowSolution={this.onClickShowSolution}
