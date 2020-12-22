@@ -1,3 +1,8 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3aeff86d-82e6-4cac-9bcf-cb9d48dd7ceb/deploy-status)](https://app.netlify.com/sites/emoji-hangman/deploys)
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
