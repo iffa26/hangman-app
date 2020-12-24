@@ -27,7 +27,7 @@ class GameOverMessage extends React.Component {
             <h2>
                 You win!
             </h2>
-            <button>New word</button> </span> }
+            <button onClick={this.hanldeClickTryAgain}>New word</button> </span> }
         </div>
     )}
 
