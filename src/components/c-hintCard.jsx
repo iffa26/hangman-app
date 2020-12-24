@@ -15,7 +15,7 @@ class HintCard extends React.Component {
                 <button onClick = {this.getHint} >💡 View hint </button>}
                 
                 {!this.state.showHintButton && 
-                <p> 💡 its a word </p>}
+                <p> 💡 {this.props.hint} </p>}
             </div>
         )}
 }

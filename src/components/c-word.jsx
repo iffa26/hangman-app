@@ -5,16 +5,17 @@ import {emojiFaces} from '../hangman-pics'
 import GameOverMessage from './c-gameOverMessage'
 import DisplayWord from './c-displayWord'
 import DisplayProgressBar from './c-progressBar.jsx'
+import apiGetNewWord from '../api'
 
 //import Emoji from './c-emoji'
 
 class Word extends React.Component {
     state = {
         word: "",
+        hint : "",
         wordArray: [], 
         displayedWordArray: [],
         wrongLetters : [],
-        //man : "",
         gameOver: false,
         gameWon: false,
         gameFinished: false 
@@ -30,24 +31,33 @@ class Word extends React.Component {
     }
 
     getNewWord = () => {
-        let newWord = "YA BIG DUMMY"
-        let wordArray = newWord.split("")
-        let displayedWordArray = wordArray.map(letter => {
-            if (letter === " ") {
-                return(" ") 
-            } else {
-                return("_")
-            }
+
+        apiGetNewWord().then((data) => {
+            console.log("new word: ", data.word)
+            let newWord = data.word.toUpperCase()
+            let newHint = data.hint
+            let wordArray = newWord.split("")
+            let displayedWordArray = wordArray.map(letter => {
+                if (letter === " ") {
+                    return(" ") 
+                } else {
+                    return("_")
+                }
+            })
+
+            this.setState({
+                word: newWord,
+                hint: newHint,
+                wordArray: wordArray,
+                displayedWordArray: displayedWordArray,
+                emoji: emojiFaces[0]
+            })
+
         })
 
 
-        this.setState(state => ({
-            word: "",
-            wordArray: wordArray,
-            displayedWordArray: displayedWordArray,
-            //man: HANGMANPICS[0],
-            emoji: emojiFaces[0]
-        }))
+
+
     }
 
     isGuessCorrect = (guess) => {
@@ -135,7 +145,7 @@ class Word extends React.Component {
                              gameWon = {this.state.gameWon}
                              onClickShowSolution={this.onClickShowSolution}
                              onClickTryAgain = {this.onClickTryAgain}/>
-            {!this.state.gameFinished && <HintCard />}
+            {!this.state.gameFinished && <HintCard hint = {this.state.hint}/>}
 
         </div>)
       }
