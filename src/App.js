@@ -3,15 +3,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/c-header.jsx'
 import Word from './components/c-word.jsx'
 import React from 'react'
+import Router from "@reach/router"
 
 
-function App() {
+class App extends React.Component {
+  state = {user: null}
+render() {
   return (
     <div className="App">
       <Header name="Humi"/>
       <Word/>
     </div>
-  );
+  )}
 }
 
 export default App;

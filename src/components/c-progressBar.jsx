@@ -5,7 +5,7 @@ import {ProgressBar} from 'react-bootstrap'
 class DisplayProgressBar extends React.Component {
 
     progress = (x) => {
-        let percent = (x.length/6)*100
+        let percent = (x.length/7)*100
         return percent
     }
 

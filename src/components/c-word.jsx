@@ -104,7 +104,7 @@ class Word extends React.Component {
 
     isGameOver = () => {
         this.setState((prevState) => {
-            if (prevState.wrongLetters.length === 6) {
+            if (prevState.wrongLetters.length === emojiFaces.length -2) {
                 return {gameOver: true, gameFinished: true}
             }
         })
@@ -137,15 +137,15 @@ class Word extends React.Component {
 
             <DisplayWord displayedWordArray = {this.state.displayedWordArray} />
 
-            <Letters guessALetter={this.guessALetter}
-                     gameFinished={this.state.gameFinished} />
             <div className = "emoji">{this.state.emoji}</div>
             <DisplayProgressBar wrongLetters={this.state.wrongLetters}/>
+            {!this.state.gameFinished && <HintCard hint = {this.state.hint}/>}
+            <Letters guessALetter={this.guessALetter}
+                     gameFinished={this.state.gameFinished} />
             <GameOverMessage gameOver = {this.state.gameOver}
                              gameWon = {this.state.gameWon}
                              onClickShowSolution={this.onClickShowSolution}
                              onClickTryAgain = {this.onClickTryAgain}/>
-            {!this.state.gameFinished && <HintCard hint = {this.state.hint}/>}
 
         </div>)
       }

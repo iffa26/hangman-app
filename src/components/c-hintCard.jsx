@@ -12,7 +12,7 @@ class HintCard extends React.Component {
         return (
             <div>
                 {this.state.showHintButton && 
-                <button onClick = {this.getHint} >💡 View hint </button>}
+                <button className = "hintButton" onClick = {this.getHint} >💡 View hint </button>}
                 
                 {!this.state.showHintButton && 
                 <p> 💡 {this.props.hint} </p>}
