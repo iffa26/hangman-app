@@ -6,7 +6,7 @@ class Letters extends React.Component {
     render() {
 
         return (
-            <div>
+            <div className = "letters">
                 <div>
                 <Letterbutton letter = "A" guessALetter={this.props.guessALetter} gameFinished={this.props.gameFinished}/>
                 <Letterbutton letter = "B" guessALetter={this.props.guessALetter} gameFinished={this.props.gameFinished}/>

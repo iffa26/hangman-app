@@ -20,14 +20,14 @@ class GameOverMessage extends React.Component {
             <h2>
                 Game over!
             </h2>
-            <button onClick={this.hanldeClickShowSolution} disabled = {this.state.showSolutionDisabled}>View solution</button>
-            <button onClick={this.hanldeClickTryAgain}>New word</button>
+            <button className = "button-gameOver" onClick={this.hanldeClickShowSolution} disabled = {this.state.showSolutionDisabled}>View solution</button>
+            <button className = "button-gameOver" onClick={this.hanldeClickTryAgain}>New word</button>
             </span> }
             {this.props.gameWon && <span>
             <h2>
                 You win!
             </h2>
-            <button onClick={this.hanldeClickTryAgain}>New word</button> </span> }
+            <button className = "button-gameOver" onClick={this.hanldeClickTryAgain}>New word</button> </span> }
         </div>
     )}
 

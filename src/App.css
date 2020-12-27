@@ -13,10 +13,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 
 .letterButton-button{
   display:inline-block;
@@ -36,7 +32,7 @@
 }
 
 .letterButton-button:disabled {
-  background: gray
+  background: #d8d8d8
 }
 
 .emoji {
@@ -45,12 +41,6 @@
   padding-bottom: 2vmin;
 }
 
-.emoji-selected {
-  font-size:  calc(10px + 5vmin);
-  padding-top: 2vmin;
-  padding-bottom: 2vmin;
-
-}
 
 .displayWord {
   font-family: 'Courier New',
@@ -61,7 +51,44 @@
   margin:0.3em 0.3em 0.3em 0.3em;
 }
 
-.hintButton{
-  margin:0.3em 0.3em 0.6em 0.3em;
- 
+ .letters{
+  margin:0.6em 0.3em 0.3em 0.3em;
+ }
+
+.button-gameOver {
+  background-color: #ffa74d  ;
+  margin:0.3em 0.3em 0.3em 0.3em;
+  width: 80px;
+  box-sizing: border-box;
+  border-radius:0.25em;
+  box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
+
 }
+
+
+.hintText {
+  margin:0.3em 0.3em 0.3em 0.3em;
+  font-size: calc(10px + 2vmin);
+  padding-top: 3vmin;
+  padding-bottom: 2vmin;
+
+
+}
+
+.Collapsible{
+  cursor: pointer;
+  padding: 15px;
+  background-color: #ffc933;
+  color: #FFF;
+  font-family: verdana;
+  padding: 0 0 0 0;
+  margin:0.3em 0.3em 0.3em 0.3em;
+
+  }
+
+.Collapsible__contentOuter{
+  cursor: pointer;
+  font-family: verdana;
+  font-size: 14px;
+  background-color: #b2b2b2
+  } 

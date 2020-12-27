@@ -1,10 +1,10 @@
 import React from 'react'
 import Letters from './c-letters'
-import HintCard from './c-hintCard'
 import {emojiFaces} from '../hangman-pics'
 import GameOverMessage from './c-gameOverMessage'
 import DisplayWord from './c-displayWord'
 import DisplayProgressBar from './c-progressBar.jsx'
+import HintCollapsible from './c-HintCollapsible'
 import apiGetNewWord from '../api'
 
 //import Emoji from './c-emoji'
@@ -136,10 +136,9 @@ class Word extends React.Component {
         <div>
 
             <DisplayWord displayedWordArray = {this.state.displayedWordArray} />
-
+            {!this.state.gameFinished && <HintCollapsible hint = {this.state.hint} />}
             <div className = "emoji">{this.state.emoji}</div>
             <DisplayProgressBar wrongLetters={this.state.wrongLetters}/>
-            {!this.state.gameFinished && <HintCard hint = {this.state.hint}/>}
             <Letters guessALetter={this.guessALetter}
                      gameFinished={this.state.gameFinished} />
             <GameOverMessage gameOver = {this.state.gameOver}
