@@ -19,7 +19,7 @@ class DisplayWord extends React.Component {
         let wordArrays = wordArray.join("").split(" ").map((Array)=>{return Array.split("")}) // [["_", "_", "_", "_"]]
         console.log("2",wordArrays)
 
-        return(<div>{wordArrays.map(array => this.formatSingleWord(array))}</div>)
+        return(<div className = "container-words">{wordArrays.map(array => this.formatSingleWord(array))}</div>)
         
         }
     }

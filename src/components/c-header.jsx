@@ -1,7 +1,7 @@
 function Header(props) {
-    return <div>
-      <h1 className = "header-hello">Hello, {props.name}! </h1>
-      <p className = "header-welcome"> Welcome to your hangman game</p>
+    return <div className = "app-header">
+      <div className = "header-welcome"> Hello Humi! Welcome to </div>
+      <h3 className = "header-hello">✨ Emoji hangman ✨</h3>
       </div>
   }
 

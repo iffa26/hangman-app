@@ -1,10 +1,16 @@
 .App {
   text-align: center;
+  max-width: 500px;
+  align-items: center;
+  justify-content: center;
+  margin:0 auto;
+
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.app-header {
+  background-color: #49515f;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,10 +19,15 @@
   color: white;
 }
 
+.header-welcome {
+  padding: 0.3em;
+  margin-bottom: 0
+}
 
 .letterButton-button{
   display:inline-block;
-  
+  font-size: calc(10px + 3vmin);
+  padding: 0.1em 0.25em 0.1em 0.25em;
   margin:0 0.3em 0.3em 0;
   border-radius:0.15em;
   box-sizing: border-box;
@@ -31,16 +42,17 @@
   position:relative; 
 }
 
+.container-words {
+padding: 0.6em 0 0.3em 0
+}
+
 .letterButton-button:disabled {
   background: #d8d8d8
 }
 
 .emoji {
-  font-size:  calc(10px + 10vmin);
-  padding-top: 2vmin;
-  padding-bottom: 2vmin;
+  font-size:  calc(10px + 15vmin);
 }
-
 
 .displayWord {
   font-family: 'Courier New',
@@ -51,7 +63,7 @@
   margin:0.3em 0.3em 0.3em 0.3em;
 }
 
- .letters{
+.letters{
   margin:0.6em 0.3em 0.3em 0.3em;
  }
 
@@ -62,33 +74,36 @@
   box-sizing: border-box;
   border-radius:0.25em;
   box-shadow:inset 0 -0.6em 0 -0.35em rgba(0,0,0,0.17);
-
 }
 
+.hintHeader{
+  padding-top: 0.3em;
+}
 
 .hintText {
   margin:0.3em 0.3em 0.3em 0.3em;
   font-size: calc(10px + 2vmin);
-  padding-top: 3vmin;
-  padding-bottom: 2vmin;
-
-
+  padding: 0.3em;
 }
 
 .Collapsible{
+  border-radius:0.25em;
+
   cursor: pointer;
-  padding: 15px;
   background-color: #ffc933;
   color: #FFF;
   font-family: verdana;
-  padding: 0 0 0 0;
-  margin:0.3em 0.3em 0.3em 0.3em;
-
+  margin:0em 0.3em 0em 0.3em;
+  
   }
+
 
 .Collapsible__contentOuter{
   cursor: pointer;
   font-family: verdana;
   font-size: 14px;
-  background-color: #b2b2b2
+  background-color: #b2b2b2;
+  margin:0em 0em 0em 0em;
+  border-radius:0.25em;
+
   } 

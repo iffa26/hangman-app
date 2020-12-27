@@ -51,9 +51,13 @@ const HANGMANPICS = [
 
 const emojiFaces = ["😃","😐","🤨","😒","😟","😫","😱","😵","🥳"]
 
+const emojiWin = ["🥳", "😍", "🤩", "😎", "👏🏽", "🙌🏽", "🌈", "🌟", "💯","🎉"]
+
+
 //export default HANGMANPICS;
 
 export {
   emojiFaces,
-  HANGMANPICS
+  HANGMANPICS,
+  emojiWin
 }

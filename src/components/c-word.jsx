@@ -1,6 +1,6 @@
 import React from 'react'
 import Letters from './c-letters'
-import {emojiFaces} from '../hangman-pics'
+import {emojiFaces, emojiWin} from '../hangman-pics'
 import GameOverMessage from './c-gameOverMessage'
 import DisplayWord from './c-displayWord'
 import DisplayProgressBar from './c-progressBar.jsx'
@@ -15,6 +15,7 @@ class Word extends React.Component {
         hint : "",
         wordArray: [], 
         displayedWordArray: [],
+        emoji: "",
         wrongLetters : [],
         gameOver: false,
         gameWon: false,
@@ -119,7 +120,7 @@ class Word extends React.Component {
             if(noCorrectLetters === noLetters) {
                 return {gameWon: true, 
                         gameFinished:true,
-                        emoji: emojiFaces[emojiFaces.length-1]}
+                        emoji: this.getWinningEmoji()}
             }
         })
     }
@@ -128,6 +129,10 @@ class Word extends React.Component {
         this.setState((prevState) => {
             return {displayedWordArray: prevState.wordArray}
         })
+    }
+
+    getWinningEmoji = () => {
+        return emojiWin[Math.floor(Math.random()*emojiWin.length)]
     }
 
     
