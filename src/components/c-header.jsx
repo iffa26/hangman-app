@@ -1,12 +1,14 @@
-import { render } from '@testing-library/react';
 import React  from 'react';
 
 class Header extends React.Component {
-render() {
+  render() {
     return (<div className = "app-header">
-      <div className = "header-welcome"> Hello {this.props.user}! Welcome to </div>
+      {this.props.user ? 
+      <div className = "header-welcome">Hello {this.props.user}! Welcome to </div> : 
+      <div className = "header-welcome"> Hello! Welcome to </div>}
       <h3 className = "header-hello">✨ Emoji hangman ✨</h3>
-      </div>)}
+      </div>
+  )}
 }
 
 export default Header;

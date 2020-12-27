@@ -6,7 +6,7 @@ import React from 'react'
 class Game extends React.Component {
 
     getName = (user) => {
-        if (user === "guest") return ""
+        if (user === "guest") return null
         else return user.charAt(0).toUpperCase() + user.slice(1)
     }
     
