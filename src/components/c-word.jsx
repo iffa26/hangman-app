@@ -144,15 +144,14 @@ class Word extends React.Component {
         <div>
 
             <DisplayWord displayedWordArray = {this.state.displayedWordArray} id={this.state.id}/>
+            <div className = "emoji">{this.state.emoji}</div> 
             {!this.state.gameFinished && <HintCollapsible hint = {this.state.hint} />}
-            <div className = "emoji">{this.state.emoji}</div>
-            <DisplayProgressBar wrongLetters={this.state.wrongLetters}/>
-            <Letters guessALetter={this.guessALetter}
-                     gameFinished={this.state.gameFinished} />
+            {!this.state.gameFinished && <DisplayProgressBar wrongLetters={this.state.wrongLetters}/> }
             <GameOverMessage gameOver = {this.state.gameOver}
                              gameWon = {this.state.gameWon}
                              onClickShowSolution={this.onClickShowSolution}
                              onClickTryAgain = {this.onClickTryAgain}/>
+            {!this.state.gameFinished && <Letters guessALetter={this.guessALetter} gameFinished={this.state.gameFinished} />}
 
         </div>)
       }
