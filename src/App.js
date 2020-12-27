@@ -1,19 +1,21 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Header from './components/c-header.jsx'
-import Word from './components/c-word.jsx'
 import React from 'react'
-//import Router from "@reach/router"
+import {Router} from "@reach/router"
+import Game from './pages/Game';
 
 
 class App extends React.Component {
-  state = {user: null}
 render() {
   return (
-    <div className="App">
-      <Header name="Humi"/>
-      <Word/>
-    </div>
+    <Router >
+      <Game path = '/' user = "guest"/>
+      <Game path = '/imti' user = "imti"/>
+      <Game path = '/humi' user = "humi"/>
+      <Game path = '/eleanor' user = "eleanor"/>
+      <Game path = '/rachel' user = "rachel"/>
+      <Game path = '/aria' user = "aria"/>
+    </Router>
   )}
 }
 

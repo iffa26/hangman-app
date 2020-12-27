@@ -12,6 +12,7 @@ import apiGetNewWord from '../api'
 class Word extends React.Component {
     state = {
         word: "",
+        id: "",
         hint : "",
         wordArray: [], 
         displayedWordArray: [],
@@ -28,16 +29,17 @@ class Word extends React.Component {
     }
 
     componentDidMount() {
-        this.getNewWord()
+        this.getNewWord(this.props.user)
     }
 
-    getNewWord = () => {
+    getNewWord = (user) => {
 
-        apiGetNewWord().then((data) => {
+        apiGetNewWord(user).then((data) => {
             console.log("new word: ", data.word)
             let newWord = data.word.toUpperCase()
             let newHint = data.hint
             let wordArray = newWord.split("")
+            let mongoId = data._id
             let displayedWordArray = wordArray.map(letter => {
                 if (letter === " ") {
                     return(" ") 
@@ -51,7 +53,8 @@ class Word extends React.Component {
                 hint: newHint,
                 wordArray: wordArray,
                 displayedWordArray: displayedWordArray,
-                emoji: emojiFaces[0]
+                emoji: emojiFaces[0],
+                id: mongoId
             })
 
         })
@@ -140,7 +143,7 @@ class Word extends React.Component {
         return (
         <div>
 
-            <DisplayWord displayedWordArray = {this.state.displayedWordArray} />
+            <DisplayWord displayedWordArray = {this.state.displayedWordArray} id={this.state.id}/>
             {!this.state.gameFinished && <HintCollapsible hint = {this.state.hint} />}
             <div className = "emoji">{this.state.emoji}</div>
             <DisplayProgressBar wrongLetters={this.state.wrongLetters}/>

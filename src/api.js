@@ -4,9 +4,9 @@ import axios from 'axios';
 //const axios = require('axios')
 
 
-const apiGetNewWord = () => {
+const apiGetNewWord = (user) => {
     return axios
-    .get('https://hangman-be.herokuapp.com/api/words')
+    .get(`https://hangman-be.herokuapp.com/api/word/${user}`)
     .then(({data}) => {
         return(data)
     })

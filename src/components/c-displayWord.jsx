@@ -2,9 +2,9 @@ import React from 'react'
 
 class DisplayWord extends React.Component {
 
-    formatSingleWord = (letters) => {
+    formatSingleWord = (letters, numberOfWords, id) => {
         return(
-        <div className = "container-item-word" key = {letters}>
+        <div className = "container-item-word" key = {id+numberOfWords.toString()}>
             {letters.map((letter, index) => {
                 return (<span key = {index+letter} >{letter}{" "}</span>)
             })
@@ -13,15 +13,10 @@ class DisplayWord extends React.Component {
         )
     }
 
-    formatArray = (wordArray) => {
-        console.log("1",wordArray) // ["_", "_", "_", "_"]
-        if(wordArray.length > 1) {
+    formatArray = (wordArray, id) => {
         let wordArrays = wordArray.join("").split(" ").map((Array)=>{return Array.split("")}) // [["_", "_", "_", "_"]]
-        console.log("2",wordArrays)
 
-        return(<div className = "container-words">{wordArrays.map(array => this.formatSingleWord(array))}</div>)
-        
-        }
+        return(<div className = "container-words">{wordArrays.map((array, numberOfWords) => this.formatSingleWord(array, numberOfWords, id))}</div>)
     }
 
     render() {
