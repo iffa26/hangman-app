@@ -22,6 +22,12 @@
   margin-bottom: 0
 }
 
+.letter-row{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 .letterButton-button{
   display:inline-block;
   font-size: calc(10px + 3vmin);
@@ -40,8 +46,20 @@
   position:relative; 
 }
 
-.container-words {
+/* .container-words {
 padding: 0.6em 0 0 0
+} */
+
+.container-item-word{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.guess-letter{
+  margin:0.6em 0.3em 0.3em 0.3em;
+
 }
 
 .letterButton-button:disabled {

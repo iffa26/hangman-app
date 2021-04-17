@@ -7,7 +7,7 @@ class Letters extends React.Component {
 
         return (
             <div className = "letters">
-                <div>
+                <div className = "letter-row">
                 <Letterbutton letter = "A" guessALetter={this.props.guessALetter} gameFinished={this.props.gameFinished}/>
                 <Letterbutton letter = "B" guessALetter={this.props.guessALetter} gameFinished={this.props.gameFinished}/>
                 <Letterbutton letter = "C" guessALetter={this.props.guessALetter} gameFinished={this.props.gameFinished}/>
@@ -16,7 +16,8 @@ class Letters extends React.Component {
                 <Letterbutton letter = "F" guessALetter={this.props.guessALetter} gameFinished={this.props.gameFinished}/>
                 <Letterbutton letter = "G" guessALetter={this.props.guessALetter} gameFinished={this.props.gameFinished}/>
                 <Letterbutton letter = "H" guessALetter={this.props.guessALetter} gameFinished={this.props.gameFinished}/>
-                </div>
+                </div >
+                <div className = "letter-row">
                 <Letterbutton letter = "I" guessALetter={this.props.guessALetter} gameFinished={this.props.gameFinished}/>
                 <Letterbutton letter = "J" guessALetter={this.props.guessALetter} gameFinished={this.props.gameFinished}/>
                 <Letterbutton letter = "K" guessALetter={this.props.guessALetter} gameFinished={this.props.gameFinished}/>
@@ -27,7 +28,8 @@ class Letters extends React.Component {
                 <Letterbutton letter = "P" guessALetter={this.props.guessALetter} gameFinished={this.props.gameFinished}/>
                 <Letterbutton letter = "Q" guessALetter={this.props.guessALetter} gameFinished={this.props.gameFinished}/>
                 <Letterbutton letter = "R" guessALetter={this.props.guessALetter} gameFinished={this.props.gameFinished}/>
-                <div>
+                </div>
+                <div className = "letter-row">
                 <Letterbutton letter = "S" guessALetter={this.props.guessALetter} gameFinished={this.props.gameFinished}/>
                 <Letterbutton letter = "T" guessALetter={this.props.guessALetter} gameFinished={this.props.gameFinished}/>
                 <Letterbutton letter = "U" guessALetter={this.props.guessALetter} gameFinished={this.props.gameFinished}/>

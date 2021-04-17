@@ -6,7 +6,7 @@ class DisplayWord extends React.Component {
         return(
         <div className = "container-item-word" key = {id+numberOfWords.toString()}>
             {letters.map((letter, index) => {
-                return (<span key = {index+letter} >{letter}{" "}</span>)
+                return (<span className = "guess-letter" key = {index+letter} >{letter}{" "}</span>)
             })
             }
         </div>
