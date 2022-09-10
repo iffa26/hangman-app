@@ -7,7 +7,6 @@ class Game extends React.Component {
 
     getName = (user) => {
         if (user === "guest") return null
-        if (user === "mcqueen") return "McQueen"
         else return user.charAt(0).toUpperCase() + user.slice(1)
     }
     
