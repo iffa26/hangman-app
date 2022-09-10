@@ -12,9 +12,11 @@ render() {
       <Game path = '/' user = "guest"/>
       <Game path = '/imti' user = "imti"/>
       <Game path = '/humi' user = "humi"/>
-      <Game path = '/eleanor' user = "eleanor"/>
-      <Game path = '/rachel' user = "rachel"/>
-      <Game path = '/aria' user = "aria"/>
+      <Game path = '/peart' user = "eleanor"/>
+      <Game path = '/hsuan' user = "rachel"/>
+      <Game path = '/ariasj' user = "aria"/>
+      <Game path = '/mcqueen' user = "amy"/>
+
     </Router>
   )}
 }
