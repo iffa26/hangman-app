@@ -6,7 +6,7 @@ import axios from 'axios';
 
 const apiGetNewWord = (user) => {
     return axios
-    .get(`https://hangman-be.herokuapp.com/api/word/${user}`)
+    .get(`https://hangman-be-2022.herokuapp.com/api/word/${user}`)
     .then(({data}) => {
         return(data)
     })
