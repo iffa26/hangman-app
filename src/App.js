@@ -14,7 +14,7 @@ render() {
       <Game path = '/humi' user = "humi"/>
       <Game path = '/peart' user = "eleanor"/>
       <Game path = '/hsuan' user = "rachel"/>
-      <Game path = '/ariasj' user = "aria"/>
+//       <Game path = '/ariasj' user = "aria"/>
       <Game path = '/mcqueen' user = "amy"/>
 
     </Router>
